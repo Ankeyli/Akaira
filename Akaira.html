@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>akaira — профайл стримера</title>
+  <style>
+    :root {
+      --bg1: #0f172a;
+      --bg2: #1e1b4b;
+      --card: rgba(255, 255, 255, 0.08);
+      --card-hover: rgba(255, 255, 255, 0.14);
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --accent: #f472b6; /* Розовый акцент для akaira */
+      --accent2: #c084fc; /* Фиолетовый акцент */
+      --border: rgba(255, 255, 255, 0.14);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+
+      /* Новые обои с затемнением для читаемости текста */
+      background:
+        linear-gradient(rgba(10, 15, 30, 0.65), rgba(20, 15, 45, 0.75)),
+        url("https://i.pinimg.com/originals/a7/08/40/a708406ccef55f131b3697edf346ec83.png") center / cover no-repeat fixed;
+
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+
+    .profile {
+      width: 100%;
+      max-width: 720px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 32px;
+      backdrop-filter: blur(18px);
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+      text-align: center;
+    }
+
+    .avatar {
+      display: block;
+      margin: 0 auto 18px;
+      width: 128px;
+      height: 128px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center;
+      border: 4px solid rgba(255, 255, 255, 0.85);
+      box-shadow: 0 0 0 8px rgba(244, 114, 182, 0.18);
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(244, 114, 182, 0.15);
+      color: #fbcfe8;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    .status::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #f472b6;
+      box-shadow: 0 0 12px #f472b6;
+    }
+
+    h1 {
+      margin: 0 0 6px;
+      font-size: clamp(28px, 5vw, 42px);
+      letter-spacing: -0.03em;
+    }
+
+    .nickname {
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    .bio {
+      color: var(--muted);
+      line-height: 1.6;
+      max-width: 520px;
+      margin: 0 auto 28px;
+      font-size: 15px;
+    }
+
+    .section-title {
+      margin: 32px 0 16px;
+      font-size: 14px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-weight: 700;
+    }
+
+    .links {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .social {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      text-decoration: none;
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--border);
+      font-weight: 700;
+      transition: 0.2s ease;
+      text-align: center;
+    }
+
+    .social:hover {
+      transform: translateY(-2px);
+      background: var(--card-hover);
+      border-color: rgba(244, 114, 182, 0.6);
+    }
+
+    .social.donate:hover {
+      border-color: #fbbf24; 
+      box-shadow: 0 0 15px rgba(251, 191, 36, 0.2);
+    }
+
+    .social.wide {
+      grid-column: 1 / -1;
+    }
+
+    .social .icon {
+      width: 26px;
+      height: 26px;
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.12);
+      font-size: 15px;
+      flex: 0 0 auto;
+    }
+
+    .footer {
+      margin-top: 36px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer a {
+      color: var(--accent2);
+      text-decoration: none;
+    }
+
+    @media (max-width: 520px) {
+      .profile { padding: 24px 18px; }
+      .links { grid-template-columns: 1fr; }
+      .social.wide { grid-column: auto; }
+      .avatar { width: 108px; height: 108px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="profile">
+    <!-- Новая аватарка -->
+    <img
+      class="avatar"
+      src="https://i.pinimg.com/736x/ba/da/f9/badaf9178b26d5d96e3356e386306416.jpg"
+      alt="Аватар akaira"
+    />
+
+    <div class="status">Стример</div>
+
+    <h1>akaira</h1>
+    <div class="nickname">@aka1raa</div>
+
+    <p class="bio">
+      Добро пожаловать на мой профайл! Здесь все ссылки на мои соцсети, 
+      стримы и способы поддержать контент.
+    </p>
+
+    <!-- Блок соцсетей (сюда добавлен Boosty) -->
+    <nav class="links" aria-label="Соцсети akaira">
+      <a class="social wide" href="https://www.twitch.tv/akaira" target="_blank" rel="noopener noreferrer">
+        <span class="icon">🎮</span>
+        Twitch
+      </a>
+
+      <a class="social" href="https://www.youtube.com/@aka1raa" target="_blank" rel="noopener noreferrer">
+        <span class="icon">▶️</span>
+        YouTube
+      </a>
+
+      <a class="social" href="https://t.me/aka1raa" target="_blank" rel="noopener noreferrer">
+        <span class="icon">✈️</span>
+        Telegram
+      </a>
+
+      <a class="social" href="https://www.tiktok.com/@aka1raa" target="_blank" rel="noopener noreferrer">
+        <span class="icon">🎵</span>
+        TikTok
+      </a>
+
+      <a class="social" href="https://discord.gg/DbQZ5DAYbR" target="_blank" rel="noopener noreferrer">
+        <span class="icon">💬</span>
+        Discord
+      </a>
+
+      <!-- Boosty переехал сюда и стал широким для красоты -->
+      <a class="social wide" href="https://boosty.to/akaira" target="_blank" rel="noopener noreferrer">
+        <span class="icon">⭐</span>
+        Boosty
+      </a>
+    </nav>
+
+    <!-- Блок донатов -->
+    <h2 class="section-title">Поддержать</h2>
+    <nav class="links" aria-label="Донаты akaira">
+      <a class="social donate" href="https://www.donationalerts.com/r/akaira" target="_blank" rel="noopener noreferrer">
+        <span class="icon">🔔</span>
+        DonationAlerts
+      </a>
+
+      <a class="social donate" href="https://taplink.cc/akaira" target="_blank" rel="noopener noreferrer">
+        <span class="icon">🤝</span>
+        ggsell
+      </a>
+    </nav>
+
+    <p class="footer">
+      Сотрудничество: <a href="mailto:ktotakayaakairaa@gmail.com">ktotakayaakairaa@gmail.com</a>
+    </p>
+  </main>
+</body>
+</html>
